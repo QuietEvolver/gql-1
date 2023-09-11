@@ -15,4 +15,12 @@ type Track {
     modulesCount: Int
 }
 
+"Author of the complete Track or a Module"
+type Author {
+    id: ID!
+    name: String!
+    photo: String
+}
+
+
 module.exports = typeDefs;
