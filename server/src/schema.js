@@ -22,5 +22,11 @@ type Author {
     photo: String
 }
 
+type Query {
+    # Fields go here 
+    "Get tracks array for homepage grid"
+    tracksForHome: [Track!]!
+}
+
 
 module.exports = typeDefs;
