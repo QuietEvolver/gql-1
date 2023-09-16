@@ -6,12 +6,12 @@ const typeDefs = require("./schema"); // typeDefs from our schema.js file
 async function startApolloServer(){
     const server = new ApolloServer({typeDefs});
     // Note: We're using shorthand property notation with implied keys, because we've named our constant with the matching key (typeDefs).
-    const { url } = startStandaloneServer(server);// initialize server
+    const { url } = await startStandaloneServer(server);// initialize server
     //The startStandaloneServer function returns a Promise, so we'll await the results of that call, and pull out the url property from the result.
     console.log(`
     🚀  Server is running!
     📭  Query at ${url}
   `); 
-    
 }
-//TODO
+//TODO: actually call the startApolloServer function at the bottom of the function declaration
+startApolloServer();
