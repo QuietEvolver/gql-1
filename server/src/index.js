@@ -5,16 +5,11 @@ const { makeExecutableSchema } = require("@graphql-tools/schema");
 
 const typeDefs = require("./schema"); // typeDefs from our schema.js file
 
-///  set up an async function called startApolloServer. Inside, we'll create an instance of the ApolloServer class and pass it our typeDefs in its options object
-async function startApolloServer(){
-    const server = new ApolloServer({typeDefs});
-    // Note: We're using shorthand property notation with implied keys, because we've named our constant with the matching key (typeDefs).
-    const { url } = await startStandaloneServer(server);// initialize server
-    //The startStandaloneServer function returns a Promise, so we'll await the results of that call, and pull out the url property from the result.
-    console.log(`
-    🚀  Server is running!
-    📭  Query at ${url}
-  `); 
-}
-//TODO: actually call the startApolloServer function at the bottom of the function declaration
-startApolloServer();
+// using the schema property. This property is another way of initializing an Apollo Server, which is useful for building federated subgraphs
+const server = new ApolloServer({
+  schema: addMocksToSchema({
+    schema: makeExecutableSchema({ typeDefs })
+  }),
+});
+// actually call the function at the bottom of the function declaration
+ApolloServer();
