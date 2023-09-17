@@ -8,7 +8,8 @@ const typeDefs = require("./schema"); // typeDefs from our schema.js file
 // using the schema property. This property is another way of initializing an Apollo Server, which is useful for building federated subgraphs
 const server = new ApolloServer({
   schema: addMocksToSchema({
-    schema: makeExecutableSchema({ typeDefs })
+    schema: makeExecutableSchema({ typeDefs }), 
+    mocks,
   }),
 });
 // actually call the function at the bottom of the function declaration
