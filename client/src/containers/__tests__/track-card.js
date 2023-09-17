@@ -20,11 +20,11 @@ describe('Track Card', () => {
   afterEach(cleanup);
 
   it('renders track Card', async () => {
-    const mocks = [];
+    const  = [];
     const { getByText } = await renderApolloWithRouter(
       <TrackCard track={mockTrackCardData} />,
       {
-        mocks,
+        ,
         resolvers: {},
         addTypename: false,
       }
