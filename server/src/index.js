@@ -18,8 +18,8 @@ ApolloServer();
 
 //With mocks enabled, Apollo Server always returns exactly two entries for every list field.
 // To get more entries at a time, let's say 6, we'll add a Query.tracksForHome to our mocks object and return an Array of that given length like so: [...new Array(6)].
-const mock = {
-
+const mocks = {
+// Mocks are great for testing out queries!
     Query: () => ({
         tracksForHome: () => [...new Array(6)],
     }),
